@@ -4,6 +4,7 @@ Backbone-TreeModel
 Extends backbone model to allow for collections within the model.
 
 Example use:
+<pre>
 <code>
 // Extend TreeModel
 // For any collections that you'd like to include in the model,
@@ -66,3 +67,4 @@ tableModel.setAll({
 	]
 })
 </code>
+</pre>
