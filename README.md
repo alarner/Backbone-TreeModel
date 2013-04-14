@@ -4,6 +4,7 @@ Backbone-TreeModel
 Extends backbone model to allow for collections within the model.
 
 Example use:
+<pre>
 <code>
 // Extend TreeModel
 // For any collections that you'd like to include in the model,
@@ -44,3 +45,4 @@ var tableModel = new TableModel(data);
 // Use getc or getCollection to grab the fields collection.
 var fieldModel = tableModel.getc('fields').get(1); // Will grab the field with id of 1
 </code>
+</pre>
