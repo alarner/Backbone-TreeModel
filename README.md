@@ -17,8 +17,10 @@ var TableModel = TreeModel.extend({
 		'engine': null,
 		'charset': null
 	},
-	'idAttribute': 'table_id',
-	'fields': FieldCollection
+	'collections': {
+		'fields': FieldCollection
+	}
+	'idAttribute': 'table_id'
 });
 
 var data = {
@@ -42,5 +44,25 @@ var data = {
 var tableModel = new TableModel(data);
 
 // Use getc or getCollection to grab the fields collection.
-var fieldModel = tableModel.getc('fields').get(1); // Will grab the field with id of 1
+var fieldCollection = tableModel.getc('fields');
+var fieldModel = fieldCollection.get(1); // Will grab the field with id of 1
+
+// Use setAll to set attributes and/or collections on the model
+tableModel.setAll({
+	'engine': 'MyISAM',
+	'fields': [
+		{
+			'field_id': 1,
+			'name': 'example_field1'
+		},
+		{
+			'field_id': 2,
+			'name': 'example_field2'
+		},
+		{
+			'field_id': 3,
+			'name': 'example_field3'
+		}
+	]
+})
 </code>
